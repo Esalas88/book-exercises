@@ -1,9 +1,13 @@
-# Exercise 4: external data sets: Gates Foundation Educational Grants
+## Exercise 4: external data sets: Gates Foundation Educational Grants
 
 # Use the `read.csv()` functoin to read the data from the `data/gates_money.csv`
 # file into a variable called `grants` using the `read.csv()`
 # Be sure to set your working directory in RStudio, and do NOT treat strings as 
 # factors!
+
+grants <- read.csv("data/gates_money.csv", stringsAsFactors = FALSE)
+
+# go to sessions to set the working directory to source file location
 
 
 # Use the View function to look at the loaded data
@@ -22,18 +26,40 @@
 
 # What was the mean grant value?
 
+## interested in total amount
+
+mean(grants$total_amount)
 
 # What was the dollar amount of the largest grant?
+grants[grants$total_amount == max(grants$total_amount), "organization"]
 
+grants$organization
 
-# What was the dollar amount of the smallest grant?
+# What was the dollar amount of the smallest grant? how much was that?
+grants[grants$total_amount == min(grants$total_amount), c("organization", "total_amount")]
 
+grants$organization 
 
 # Which organization received the largest grant?
 
 
 # Which organization received the smallest grant?
 
+## interested in the total amount and the organization
+
 
 # How many grants were awarded in 2010?
+
+nrow(grants[grants$start_year == "2010", ])
+
+# how mucn money was awarded in 2010
+
+sum(grants[grants$start_year == "2010", "total_amount"])
+
+
+####
+
+#A3, pt 3:10 
+
+
 
