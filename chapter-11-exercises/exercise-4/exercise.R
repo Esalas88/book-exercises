@@ -4,7 +4,7 @@
 # You'll also need to load `dplyr`
 install.packages("nycflights13")
 
-library(nycflights13)
+library("nycflights13")
 
 library("dplyr")
 
@@ -13,7 +13,7 @@ library("dplyr")
 # What are the names of the columns?
 # Use `??flights` to search for documentation on the data set (for what the 
 # columns represent)
-View(nycflights13)
+View(flights)
 
 # Use `dplyr` to give the data frame a new column that is the amount of time
 # gained or lost while flying (that is: how much of the delay arriving occured
@@ -59,3 +59,5 @@ flights %>%
   pull(avg_delayed)
 
 getwd()
+
+
