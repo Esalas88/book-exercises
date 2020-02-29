@@ -1,10 +1,16 @@
 # Exercise 1: building a Shiny user interface
 
 # Load the `shiny` package (install it in the R terminal if you haven't already)
-
+install.packages("shiny")
+library("shiny")
 
 # Define a new `ui` variable. This variable should be assigned a `fluidPage()`
 # layout. The `fluidPage()` layout should be passed the following:
+
+ui <- fluidPage(
+  h1("First Shiny Website"),
+  p("Evelyn is", strong("really"), "excited to work with shiny"),
+  img()
 
 
   # A first-level header (`h1()`) with the content "First Shiny Website"
@@ -27,7 +33,7 @@
 
 
   # (Your `fluidLayout()` should end here)
-
+)
 
 # This defines a server that doesn't do anything yet, but is needed to run the app.
 server <- function(input, output) {
